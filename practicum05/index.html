@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Спортивна ліга (AJAX)</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 15px; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        th { background-color: #0056b3; color: white; }
+        .error { color: red; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Турнірна таблиця (Спортивна ліга)</h1>
+    
+    <div id="error-msg" class="error"></div>
+
+    <form id="addForm" style="margin-bottom: 20px; padding: 15px; background: #f4f4f4;">
+        <h3>Додати команду</h3>
+        <input type="text" name="name" placeholder="Назва команди" required>
+        <input type="text" name="city" placeholder="Місто" required>
+        <input type="number" name="points" placeholder="Очки" value="0" required>
+        <button type="submit">Зберегти</button>
+    </form>
+
+    <!-- Поле пошуку для живої фільтрації[cite: 12] -->
+    <input type="text" id="search" placeholder="Пошук за містом..." style="width: 100%; padding: 8px;">
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Назва команди</th>
+                <th>Місто</th>
+                <th>Очки</th>
+            </tr>
+        </thead>
+        <!-- Порожній контейнер для результатів[cite: 12] -->
+        <tbody id="results"></tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
